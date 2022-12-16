@@ -33,19 +33,27 @@ sudo apt-get update
 sudo apt-get -y install php7.0 php7.0-curl php7.0-bcmath php7.0-intl php7.0-gd php7.0-dom php7.0-mcrypt php7.0-iconv php7.0-xsl php7.0-mbstring php7.0-ctype php7.0-zip php7.0-pdo php7.0-xml php7.0-bz2 php7.0-calendar php7.0-exif php7.0-fileinfo php7.0-json php7.0-mysqli php7.0-mysql php7.0-posix php7.0-tokenizer php7.0-xmlwriter php7.0-xmlreader php7.0-phar php7.0-soap php7.0-mysql php7.0-fpm libapache2-mod-php7.0
 sudo sed -i -e"s/^memory_limit\s*=\s*128M/memory_limit = 512M/" /etc/php/7.0/apache2/php.ini
 ```
-
 #### To check apache and php installations and its version, use the below command.
 ```
 apache2 -v
 php -v
 ```
-
 #### Enable apache rewrite and headers module.
 ```
 sudo a2enmod rewrite
 sudo a2enmod headers
 sudo service apache2 restart
 ```
+Now Apache webserver and php has been installed on your server.
+Further you may also need to install mysql-client to login to the remote database instance i.e. on SQL service of GCP.
+
+#### To install mysql-client, use the below command.
+```
+sudo apt-get -y install mysql-client
+mysql --version
+```
+
+
 
 
 
