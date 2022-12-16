@@ -83,4 +83,44 @@ If you are able to login to the MySQL instance through the public IP, then your 
 Congrats, you have now successfully set up LAMP on GCP with multi-tier architecture with separate Instance for Compute and Database.
 
 ## Step 5: Create a Global Load Balancer Resource
-- 
+- Navigate either using the Hamburger menu at the top left or the Search box on your console
+- Search for `Load Balancing` and Click on it to open the Service
+    - Click on `Create Load Balancer`
+    - Click on `Start Configuration` on the `HTTP(S) Load Balancing` Option
+    - Internet facing or internal only: Selctect `From Internet to my VMs or serverless services`
+    - Global or Regional: Select `Global HTTP(S) Load Balancer` 
+    - Click on `Continue`
+    - Name: `wordpress-global-lb`
+    - Click on: `Backend configuration`
+        - Select: `Create a Backend Service`
+        - Name: `wordpress-webapp-bs`
+        - Backend type: `Instance group`
+        - Instance group: `select your instance group`
+        - Port numbers: `80`
+        - Balancing Mode: `Utilization`
+        - Maximum backend Utilization: `80%`
+        - Cloud CDN: Check the Box `Enable Cloud CDN`
+        - Cache mode: Cache static content `(recommended)`
+        - Health Check: `Select the Health Check you created earlier for MIG`
+        - Logging: `Enable`
+            - Sample rate: `1`
+        - NOTE: Leave every other Configuration as Default
+        - Click `CREATE` and Select the Backend
+
+        - Click on `CREATE` again to create the Global Load Balancer
+
+#### TEST: Copy the Load Balancer Front End IP Address and Query on The Browser
+![CopyLoadBalancerIP!](https://github.com/awanmbandi/google-cloud-projects/blob/project-resources/images/loadbalancer-frontend-ip.png)
+
+#### APP: You Should See This
+![CopyLoadBalancerIP!](https://github.com/awanmbandi/google-cloud-projects/blob/project-resources/images/wordpress-app-display.png)
+        
+        
+
+
+
+
+
+
+
+
