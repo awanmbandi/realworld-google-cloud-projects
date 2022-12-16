@@ -1,4 +1,4 @@
-# Deploying a Multi/3 Tier Application on GCP
+# 🚀Deploying a Multi/3 Tier Application on GCP🚀
 In this runbook, we will discuss/implement the LAMP installation with multi-tier architecture on GCP. We will be using the Compute Engine service of GCP for Linux server, Apache Web server and php. For the Mysql database, we will use the SQL service of GCP as a separate micro service. We will connect both the services to design  a multi-tier architecture for LAMP installation. For Installing LAMP on GCP, you need to have a registered GCP account. At this point, I assume that you already have a registered GCP account.
 
 ## Step 1: Creating A MySQL Database Using SQL Service Of GCP
