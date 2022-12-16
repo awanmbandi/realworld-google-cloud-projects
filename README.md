@@ -53,7 +53,9 @@ sudo apt-get -y install mysql-client
 mysql --version
 ```
 
-
+## Step 3: Creating A MySQL Database Using SQL Service Of GCP
+To create a mysql database using SQL service of GCP, go to Navigation menu  > SQL. Now click on “create instance”, choose database engine as MySQL and click on next. Next you need to choose the use case i.e. for development, staging or production. Here we will choose development. Next in the configure step,  choose Instance Id, Root Password, Region and zone. You can also change other configuration parameters as per your requirement but we will keep it default for this demo. Now click on create button to create the mysql instance. Once the Mysql Instance is created, you can click on its instance id to see its details. You can also find the Public IP of the MySQL instance in the Overview section.
+![CreateMySQLDB!](https://github.com/awanmbandi/google-cloud-projects/blob/project-resources/images/gcp-mysql.png)
 
 
 
