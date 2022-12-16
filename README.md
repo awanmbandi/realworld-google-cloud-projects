@@ -11,7 +11,7 @@ For creating a Compute engine VM, you may refer to my previous blog on running a
 
 First create a Compute Engine VM on your GCP account/project and once you have created a VM instance, ssh/login to the VM server to install apache and php. You can login/ssh either via GCP provided web console, CloudShell or third-party ssh tools like terminal or putty. Here we will use our local to login, however like I mentioned you can also use the GCP web console for ssh login as shown below.
 
-![CompleteCICDProject!](https://lucid.app/publicSegments/view/a6ef3233-7dda-483a-a662-d8ec90395ba3/image.png)
+![CreateVMInstance!](https://github.com/awanmbandi/google-cloud-projects/blob/project-resources/images/gcp-ssh2.png)
 
 
 
