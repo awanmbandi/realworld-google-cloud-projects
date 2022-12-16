@@ -136,7 +136,7 @@ Congrats, you have now successfully set up LAMP on GCP with multi-tier architect
 - Click `Create` to create the A record for your zone.
 
 #### Validate: Copy Your Domain and Past on The Browser to Access The Application
-# Congratulations On Deploying a 3 Tier App on GCP
+# 🍀 Congratulations On Deploying a 3 Tier App on GCP 🍀
 
 
 
