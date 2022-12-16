@@ -68,7 +68,7 @@ Before creating the MIG, you must make sure you have the following pre-requisite
 #### (OPTIONAL) SSH and Verify Setup Was Completed As Expected
 To SSH login to the VM instance via “ssh web interface”, click on the SSH button of the instance from the console by going to Navigation menu > Compute Engine > VM Instances. On clicking on the ssh button of the VM instance, an ssh web interface will be prompt where  you will be logged in to that particular instance. Here you can perform any operations on the server via ssh.
 
-![CreateVMInstance!](https://github.com/awanmbandi/google-cloud-projects/blob/project-resources/images/gcp-ssh2.png)
+![SSHintoVMInstance!](https://github.com/awanmbandi/google-cloud-projects/blob/project-resources/images/ssh-into-vm.png)
 
 ## Step 4: (OPTIONA) Verify that the VMs are properly authenticated to the MySQL database
 SSH login to the Compute VM instance and check if you are connected and able to login to the database instance. For this you need the Public IP of the database instance which you can easily get in the overview section of the MySQL Instance.
@@ -82,5 +82,5 @@ If you are able to login to the MySQL instance through the public IP, then your 
 
 Congrats, you have now successfully set up LAMP on GCP with multi-tier architecture with separate Instance for Compute and Database.
 
-## Step 5: Create a Load Balancer Resource
+## Step 5: Create a Global Load Balancer Resource
 - 
