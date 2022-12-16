@@ -120,6 +120,27 @@ Congrats, you have now successfully set up LAMP on GCP with multi-tier architect
 - You need a Domain to be able to engage this aspect
 - You can either register a Domain in Cloud DNS or Export your Domain Name Service to Cloud DNS from where you registered it
 
+1. Register a Domain: https://cloud.google.com/dns/docs/tutorials/create-domain-tutorial#register-domain
+2. Set Up Your Domain to Point At The Global Load Balancer IP
+- In the `Google Cloud console`, go to the `Cloud DNS` service.
+- Click on `Create a DNS zone`
+- For the `Zone type`, select `Public`
+- For the `Zone name`, enter `wordpress-web-app-zone`
+- For the `DNS name`, enter a DNS name suffix for the zone by using a domain name that you registered `(for example, example.com)`.
+- For `DNSSEC`, ensure that the `Off` setting is selected
+- Click `Create` to create a zone populated with the NS and SOA records.
+3. To point your registered domain name to the IP address of the hosting server, you must add an A record to your zone:
+- On the `Zone details` page, click `Add record set`.
+- Select `A` from the `Resource Record Type` menu.
+- For `IPv4 Address`, enter the Global External IP address of your `Load Balancer`.
+- Click `Create` to create the A record for your zone.
+
+#### Validate: Copy Your Domain and Past on The Browser to Access The Application
+# Congratulations On Deploying a 3 Tier Application on GCP
+
+
+
+
 
 
 
