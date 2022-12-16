@@ -16,59 +16,61 @@ Once you have created a Mysql Database on SQL service on GCP, its time to connec
 
 ![ConnectingToMySQLDB!](https://github.com/awanmbandi/google-cloud-projects/blob/project-resources/images/gcp-add_network2.png)
 
-## Step 2: Creating A Compute Engine VM
-For creating a Compute engine VM, you may refer to my previous blog on running a compute engine VM on GCP. In this blog, we will use the following:
+## Step 2: Create An Instance Template
+Before creating the Instance Template, you must make sure you have the following pre-requisites taken care of.
+#### Prerequisites
+- Make sure you've updated the `app-automation.sh` script with your specific parameters/values
+- Make sure you've updated the `wp-config.php` script which holds the app database connection details
 
-- Linux OS: Ubuntu 16.04
-- Apache Version: v2.4
-- Php Version: v7.0
-- Mysql Version : v5.7
+- Click on either the Hamburger Menu at the top left hand corner or the search box above and Search for the `Compute Engine` 
+- Open the `Compute Engine` Service and Click on `Instance Template`
+- Click on `Create Instance Template`
+- Provide a name `wordpress-webapp-instance-template`
+- Machine type: `e2-medium`
+- Change Boot Disk to `Ubuntu 18.04`
+- Under Firewall, check the `Allow HTTP traffic` option/box
+- Expand Advance Options 
+    - Click on Management 
+    - Navigate to the Automation (Startup-Script) section 
+    - Paste the following script in the Box: https://github.com/awanmbandi/google-cloud-projects/blob/main/startup-script/app-automation.sh
+- Note: Leave everything else as Default and Create
+- Click on `CREATE`
 
-First create a Compute Engine VM on your GCP account/project and once you have created a VM instance, ssh/login to the VM server to install apache and php. You can login/ssh either via GCP provided web console, CloudShell or third-party ssh tools like terminal or putty. Here we will use our local to login, however like I mentioned you can also use the GCP web console for ssh login as shown below.
+![InstanceTemplate!](https://github.com/awanmbandi/google-cloud-projects/blob/project-resources/images/instance-template.png)
 
+## Step 3: Create a Managed Instance Group (MIGs)
+Before creating the MIG, you must make sure you have the following pre-requisites taken care of.
+#### Prerequisites
+- Make sure you've updated the `app-automation.sh` script with your specific parameters/values
+- Make sure you've updated the `wp-config.php` script which holds the app database connection details
+- Linux OS: Ubuntu 18.04
+
+- Still on the `Compute Engine Console`
+- Click on `Instance Groups` on your left 
+- Click `Create Instance Group`
+    - Name: `wordpress-webapp-instance-group`
+    - Instance Template: Select your template
+    - Location: Select `Multi Zones` and choose at least two AZs
+    - Minimum Instances: 2
+    - Maximum: 2
+    - Autoscaling Metrics: 60% or 80%
+    - Coold Down Period: 60
+    - Autohealing: Create a Health Check
+        - Click Create Health Check
+        - Name: `wordpress-webapp-hc`
+        - Protocol: TCP, Port: 80
+        - Logs: On
+        - Click on `SAVE`
+- Click on `CREATE` to create MIG
+
+![InstanceTemplate!](https://github.com/awanmbandi/google-cloud-projects/blob/project-resources/images/manage-instance-group.png)
+
+#### (OPTIONAL) SSH and Verify Setup Was Completed As Expected
 To SSH login to the VM instance via “ssh web interface”, click on the SSH button of the instance from the console by going to Navigation menu > Compute Engine > VM Instances. On clicking on the ssh button of the VM instance, an ssh web interface will be prompt where  you will be logged in to that particular instance. Here you can perform any operations on the server via ssh.
 
 ![CreateVMInstance!](https://github.com/awanmbandi/google-cloud-projects/blob/project-resources/images/gcp-ssh2.png)
 
-## Step 3: Installing Apache And PHP
-After login into the VM instance, you can install apache web server and PHP. You can define your preferred php version for installation.
-
-#### To install apache web server, Use the following commands.
-```
-sudo apt-get -y install apache2
-```
-#### To install php and its extensions, use the bellow commands. We will use php7.0 for the demo.
-```
-sudo locale-gen en_US.UTF-8
-export LANG=en_US.UTF-8
-sudo apt-get update
-sudo apt-get install -y software-properties-common python-software-properties
-sudo LC_ALL=en_US.UTF-8 add-apt-repository -y ppa:ondrej/php
-sudo apt-get update
-sudo apt-get -y install php7.0 php7.0-curl php7.0-bcmath php7.0-intl php7.0-gd php7.0-dom php7.0-mcrypt php7.0-iconv php7.0-xsl php7.0-mbstring php7.0-ctype php7.0-zip php7.0-pdo php7.0-xml php7.0-bz2 php7.0-calendar php7.0-exif php7.0-fileinfo php7.0-json php7.0-mysqli php7.0-mysql php7.0-posix php7.0-tokenizer php7.0-xmlwriter php7.0-xmlreader php7.0-phar php7.0-soap php7.0-mysql php7.0-fpm libapache2-mod-php7.0
-sudo sed -i -e"s/^memory_limit\s*=\s*128M/memory_limit = 512M/" /etc/php/7.0/apache2/php.ini
-```
-#### To check apache and php installations and its version, use the below command.
-```
-apache2 -v
-php -v
-```
-#### Enable apache rewrite and headers module.
-```
-sudo a2enmod rewrite
-sudo a2enmod headers
-sudo service apache2 restart
-```
-Now Apache webserver and php has been installed on your server.
-Further you may also need to install mysql-client to login to the remote database instance i.e. on SQL service of GCP.
-
-#### To install mysql-client, use the below command.
-```
-sudo apt-get -y install mysql-client
-mysql --version
-```
-
-#### Verify that the VMs are properly authenticated to the MySQL database
+## Step 4: (OPTIONA) Verify that the VMs are properly authenticated to the MySQL database
 SSH login to the Compute VM instance and check if you are connected and able to login to the database instance. For this you need the Public IP of the database instance which you can easily get in the overview section of the MySQL Instance.
 ```
 ping  <public_IP_of_MySQL_instance>
@@ -79,3 +81,6 @@ mysql -h <public_IP_of_MySQL_instance> -u root -p
 If you are able to login to the MySQL instance through the public IP, then your Compute instance VM is properly authenticated the MySQL database instance.
 
 Congrats, you have now successfully set up LAMP on GCP with multi-tier architecture with separate Instance for Compute and Database.
+
+## Step 5: Create a Load Balancer Resource
+- 
