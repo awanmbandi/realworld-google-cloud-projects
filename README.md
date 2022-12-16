@@ -63,6 +63,18 @@ Once you have created a Mysql Database on SQL service of GCP, its time to connec
 
 ![ConnectingToMySQLDB!](https://github.com/awanmbandi/google-cloud-projects/blob/project-resources/images/gcp-add_network2.png)
 
+#### Verify that the database is properly authenticated to the MySQL database
+SSH login to the Compute VM instance and check if you are connected and able to login to the database instance. For this you need the Public IP of the database instance which you can easily get in the overview section of the MySQL Instance.
+```
+ping  <public_IP_of_MySQL_instance>
+```
+```
+mysql -h <public_IP_of_MySQL_instance> -u root -p
+```
+If you are able to login to the MySQL instance through the public IP, then your Compute instance VM is properly authenticated the MySQL database instance.
+
+Congrats, you have now successfully set up LAMP on GCP with multi-tier architecture with separate Instance for Compute and Database.
+
 
 
 
