@@ -115,7 +115,10 @@ Congrats, you have now successfully set up LAMP on GCP with multi-tier architect
 #### APP: You Should See This
 ![CopyLoadBalancerIP!](https://github.com/awanmbandi/google-cloud-projects/blob/project-resources/images/wordpress-app-display.png)
         
-        
+## Step 6: Create a Cloud DNS Hosted Zone and Record
+#### Prerequisites
+- You need a Domain to be able to engage this aspect
+- You can either register a Domain in Cloud DNS or Export your Domain Name Service to Cloud DNS from where you registered it
 
 
 
