@@ -1,4 +1,4 @@
-# Migrating From Azure Blob Stoage To GCP GCS
+# Migrating Data From Azure Blob Stoage To GCP GCS
 ## Step 1: Create Your Azure Resource Group, Storage Account and Container
 
 1. Create an Azure Resurce Group: https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal#create-resource-groups
