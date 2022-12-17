@@ -7,6 +7,7 @@
 
 ![GenerateSAStoekn2!](https://github.com/awanmbandi/google-cloud-projects/blob/project-resources/storage-transfer-job/Screen%20Shot%202022-12-17%20at%2012.26.54%20AM.png)
 
+## Create The Data Transfer Job
 - Navigate to the `Storage Transfer Service` or `Transfer Jobs`
 - Click on `Create Transfer Job`
 
