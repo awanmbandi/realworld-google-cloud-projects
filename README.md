@@ -1,7 +1,7 @@
 # 👨🏼‍💻Migrating Data From Azure Blob Storage To GCP GCS👨🏼‍💻
-## Step 1: Create Your Azure Resource Group, Storage Account and Container
-
 ![MigrateFromAWSandAzureToGCP!](https://lucid.app/publicSegments/view/124eabd7-7d3d-4ee7-ada8-887b4b9e655e/image.png)
+
+## Step 1: Create Your Azure Resource Group, Storage Account and Container
 
 1. Create an Azure Resurce Group: https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal#create-resource-groups
 2. Create an Azure Storage Account: https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal#create-a-storage-account-1
