@@ -1,10 +1,14 @@
 ## Creating The Migration Job
-- Navigate to the `Storage Transfer Service` or `Transfer Jobs`
-- Click on `Create Transfer Job`
+- Navigate to your Azure Portal 
+- Open the `Data Science` `Storage Account` 
+- Follow the below instructions to create a `Shared Access Token`
 
 ![GenerateSAStoekn1!](https://github.com/awanmbandi/google-cloud-projects/blob/project-resources/storage-transfer-job/Screen%20Shot%202022-12-17%20at%2012.24.52%20AM.png)
 
 ![GenerateSAStoekn2!](https://github.com/awanmbandi/google-cloud-projects/blob/project-resources/storage-transfer-job/Screen%20Shot%202022-12-17%20at%2012.26.54%20AM.png)
+
+- Navigate to the `Storage Transfer Service` or `Transfer Jobs`
+- Click on `Create Transfer Job`
 
 ![CreateMigrationJob1!](https://github.com/awanmbandi/google-cloud-projects/blob/project-resources/storage-transfer-job/Screen%20Shot%202022-12-17%20at%2012.05.50%20AM.png)
 
