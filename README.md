@@ -9,7 +9,7 @@
 5. Generate An Azure Shared Access Token (SAS): https://improvado.io/docs/how-to-generate-an-azure-sas-token#:~:text=Azure%20SAS%20Token-,How%20to%20Generate%20an%20Azure%20SAS%20Token,-The%20simplest%20way
 
 ## Step 2: Setup Your GCP Cloud Console and Create a Project
-1. Sign Up For Free: `https://cloud.google.com/free`
+1. Sign Up For Free: https://cloud.google.com/free
     - Click on `Go to Console` to sign up
 2. You will be prompted to configure the following 
     - Use the following Link: https://github.com/awanmbandi/google-cloud-projects/blob/migrate-azure-to-gcp/signup-to-gcp.md
