@@ -1,1 +1,1 @@
-# 👨🏼‍💻Deploying a Netflix Related Application on GCP👨🏼‍💻
+# 👨🏼‍💻Deploying a Netflix Type of App on GCP👨🏼‍💻
