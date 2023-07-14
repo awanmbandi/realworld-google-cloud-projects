@@ -43,7 +43,7 @@ Before creating the MIG, you must make sure you have the following pre-requisite
 #### Prerequisites
 - Make sure you've updated the `app-automation.sh` script with your specific parameters/values
 - Make sure you've updated the `wp-config.php` script which holds the app database connection details
-- Linux OS: Ubuntu 18.04
+- Linux OS: Ubuntu 20.04
 
 - Still on the `Compute Engine Console`
 - Click on `Instance Groups` on your left 
