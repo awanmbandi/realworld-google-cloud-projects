@@ -6,12 +6,12 @@ To create a mysql database using SQL service of GCP, go to Navigation menu  > SQ
 
 ![CreateMySQLDB!](https://github.com/awanmbandi/google-cloud-projects/blob/project-resources/images/database-instance.png)
 
-#### Create a Database In The Above Database Instance To Host The Application Data
+#### A. Create a Database In The Above Database Instance To Host The Application Data
 To create a Database in the above DB instance, Click on the Database instance name in Cloud SQL > Click on Databases > Click on `Create Database` provide the Database name e.g `wordpressdb` > and Click `CREATE`.
 
 ![CreateADatabase!](https://github.com/awanmbandi/google-cloud-projects/blob/project-resources/images/creating-a-database.png)
 
-#### Granting The Database Instance Access to The App Servers
+#### B. Granting The Database Instance Access to The App Servers
 Once you have created a Mysql Database on SQL service on GCP, its time to connect the Database to the Compute Engine VM instance. For this, you need to allow the public IP of the Compute VM, in the firewall rules of the MySQL service. Click on the MySQL database Instance Id that you created and select the Connections Tab, and under the connectivity section, click on “Add network”. Now give a name to the network and add the IP of the Compute VM instance in the CIDR format i.e. <ipv4_address>/32 and finally click on done and save. If you're finding it difficult to save the VM IP, then provide `0.0.0.0/0` and Save. This will allow the Compute VM instance to connect with the MySQL database instance.
 
 ![ConnectingToMySQLDB!](https://github.com/awanmbandi/google-cloud-projects/blob/project-resources/images/gcp-add_network2.png)
