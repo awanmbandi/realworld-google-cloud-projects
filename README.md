@@ -55,12 +55,7 @@ Before creating the MIG, you must make sure you have the following pre-requisite
     - Maximum: 2
     - Autoscaling Metrics: 60% or 80%
     - Coold Down Period: 60
-    - Autohealing: Create a Health Check
-        - Click Create Health Check
-        - Name: `wordpress-webapp-hc`
-        - Protocol: TCP, Port: 80
-        - Logs: On
-        - Click on `SAVE`
+    - Autohealing: `No Health Check`
 - Click on `CREATE` to create MIG
 
 ![InstanceTemplate!](https://github.com/awanmbandi/google-cloud-projects/blob/project-resources/images/manage-instance-group.png)
